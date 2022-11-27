@@ -1,0 +1,46 @@
+.Form {
+  margin: 40px 0;
+  display: flex;
+  justify-content: stretch;
+}
+
+#current-button {
+  padding: 8px 11px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #eb8439;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+#current-button:hover {
+  color: #fff;
+  background-color: #eb8439;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+.enter-city,
+.button-search {
+  font-size: 16px;
+  border: none;
+  padding: 8px 11px;
+  box-shadow: 5px 5px 5px rgb(53, 63, 52);
+  margin-right: 5px;
+}
+.enter-city {
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.button-search {
+  background-color: #eb8439;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+}
+.button-search:hover {
+  background-color: #fff;
+  color: #eb8439;
+  transition: 200ms ease-in-out;
+}

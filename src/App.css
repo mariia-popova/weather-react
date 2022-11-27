@@ -1,0 +1,18 @@
+.App {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  max-width: 400px;
+  margin: 20px auto 5px;
+  padding: 30px 20px 30px 20px;
+  border-radius: 10px;
+  background-image: url("/src/images/forest.jpg");
+  background-color: #00000050;
+  background-blend-mode: normal;
+  background-position: bottom;
+}
+
+.ForecastTable {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
