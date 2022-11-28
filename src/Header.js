@@ -6,7 +6,7 @@ export default function Header(props) {
     <div className="Header">
       <div>
         <h1>{props.city}</h1>
-        <h2>{props.temp} ºC</h2>
+        <h2>{Math.round(props.temp)} ºC</h2>
       </div>
       <img class="icon" src={`icons/${props.icon}.png`} alt="weather icon" />
     </div>
