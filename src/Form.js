@@ -22,18 +22,17 @@ export default function Form(props) {
   return (
     <form className="Form" onSubmit={handleSubmit}>
       <input
-        class="enter-city"
+        className="enter-city"
         id="cityEnter"
         type="text"
         placeholder="Enter the city"
         onChange={handleChangeInput}
+        value={inputValue}
       />
-      <input
-        class="button-search"
-        id="search-button"
-        type="Submit"
-        value="Search"
-      />
+      <button className="button-search" id="search-button" type="Submit">
+        Search
+      </button>
+
       <button id="current-button">Current</button>
     </form>
   );

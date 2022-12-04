@@ -8,7 +8,11 @@ export default function Header(props) {
         <h1>{props.city}</h1>
         <h2>{Math.round(props.temp)} ºC</h2>
       </div>
-      <img class="icon" src={`icons/${props.icon}.png`} alt="weather icon" />
+      <img
+        className="icon"
+        src={`./icons/${props.icon}.png`}
+        alt="weather icon"
+      />
     </div>
   );
 }

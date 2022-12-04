@@ -15,14 +15,13 @@ function App() {
       <div className="App">
         <Header
           temp={weather ? weather.main.temp : 2}
-          city={"Kyiv"}
-          icon={"03d"}
+          city={weather ? weather.name : "Kyiv"}
+          icon={weather ? weather.weather[0].icon : "03d"}
         />
         <Description
-          day={"Saturday"}
-          time={"12:45"}
-          weatherDescroption={"Cloud"}
-          windSpeed={4.5}
+          date={weather ? new Date(weather.dt * 1000) : null}
+          weatherDescription={weather ? weather.weather[0].main : "Cloud"}
+          windSpeed={weather ? weather.wind.speed : 8}
         />
         <Form setWeather={setWeather} />
         <div className="ForecastTable">
