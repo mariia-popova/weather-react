@@ -8,7 +8,6 @@ import { useState } from "react";
 
 function App() {
   const [weather, setWeather] = useState();
-  console.log(weather);
 
   return (
     <div>
