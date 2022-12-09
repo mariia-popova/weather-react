@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
   const [weather, setWeather] = useState();
-
+  const [forecast, setForecast] = useState(null);
   return (
     <div>
       <div className="App">
@@ -22,14 +22,8 @@ function App() {
           weatherDescription={weather ? weather.weather[0].main : "Cloud"}
           windSpeed={weather ? weather.wind.speed : 8}
         />
-        <Form setWeather={setWeather} />
-        <div className="ForecastTable">
-          <Forecast day={"Mon"} icon={"03d"} maxTemp={8} minTemp={5} />
-          <Forecast day={"Tue"} icon={"01d"} maxTemp={9} minTemp={6} />
-          <Forecast day={"Wed"} icon={"03d"} maxTemp={10} minTemp={5} />
-          <Forecast day={"Thu"} icon={"09d"} maxTemp={7} minTemp={4} />
-          <Forecast day={"Sat"} icon={"03d"} maxTemp={9} minTemp={4} />
-        </div>
+        <Form setWeather={setWeather} setForecast={setForecast} />
+        <Forecast forecast={forecast} />
       </div>
       <Footer />
     </div>

@@ -1,10 +1,16 @@
 .Forecast img {
   display: block;
-  width: 50px;
-  height: 50px;
+  margin: 0, auto;
+  width: 75px;
+  height: 75px;
 }
 
 .Forecast p {
-  display: block;
-  margin: 5px;
+  text-align: center;
+  margin: 0;
+}
+
+.Forecast {
+  display: flex;
+  justify-content: space-between;
 }

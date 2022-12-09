@@ -10,9 +10,3 @@
   background-blend-mode: normal;
   background-position: bottom;
 }
-
-.ForecastTable {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}

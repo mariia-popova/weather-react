@@ -6,11 +6,12 @@
 }
 
 .Header h1 {
-  font-weight: 500px;
+  font-weight: 400px;
   font-size: 45px;
 }
 .Header h2 {
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 35px;
 }
 
 .icon {
