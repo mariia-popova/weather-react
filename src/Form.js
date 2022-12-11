@@ -54,7 +54,7 @@ export default function Form(props) {
 
     let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=Kyiv&key=aed6a8e29c1edbe73t3fba79abf409do&units=metric`;
     axios.get(apiForecastUrl).then(saveForecastResault);
-  }, []);
+  }, [saveWeatherResault, saveForecastResault]);
 
   return (
     <form className="Form" onSubmit={handleSubmit}>
