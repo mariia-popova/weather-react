@@ -10,7 +10,6 @@ export default function Forecast(props) {
     <div className="Forecast">
       {props.forecast.map(function (day) {
         const formatedDay = format(day.time * 1000, "E");
-        console.log(day);
         return (
           <div className="ForecastInfo" key={day.time}>
             <p>{formatedDay}</p>
