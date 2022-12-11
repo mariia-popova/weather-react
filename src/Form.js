@@ -4,6 +4,7 @@ import "./Form.css";
 
 export default function Form(props) {
   const [inputValue, setInputValue] = useState("");
+  const { setWeather, setForecast } = props;
 
   function handleChangeInput(event) {
     setInputValue(event.target.value);
@@ -14,12 +15,12 @@ export default function Form(props) {
 
     let url = `https://api.shecodes.io/weather/v1/current?query=${inputValue}&key=aed6a8e29c1edbe73t3fba79abf409do&units=metric`;
     const weatherResponse = await axios.get(url);
-    props.setWeather(weatherResponse.data);
+    setWeather(weatherResponse.data);
 
     let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${inputValue}&key=aed6a8e29c1edbe73t3fba79abf409do&units=metric`;
     const forecastResponse = await axios.get(apiForecastUrl);
     const formatedArray = forecastResponse.data.daily.slice(1, 6);
-    props.setForecast(formatedArray);
+    setForecast(formatedArray);
   };
 
   function getCurrentWeather(event) {
@@ -33,28 +34,28 @@ export default function Form(props) {
     const responseCurrentWeather = await axios.get(
       `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=aed6a8e29c1edbe73t3fba79abf409do`
     );
-    props.setWeather(responseCurrentWeather.data);
+    setWeather(responseCurrentWeather.data);
 
     const responseForecast = await axios.get(
       `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=aed6a8e29c1edbe73t3fba79abf409do`
     );
     const formatedArray = responseForecast.data.daily.slice(1, 6);
-    props.setForecast(formatedArray);
+    setForecast(formatedArray);
   };
 
   useEffect(() => {
     const fetchInitialData = async () => {
       let url = `https://api.shecodes.io/weather/v1/current?query=Kyiv&key=aed6a8e29c1edbe73t3fba79abf409do&units=metric`;
       const weatherResponse = await axios.get(url);
-      props.setWeather(weatherResponse.data);
+      setWeather(weatherResponse.data);
 
       let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=Kyiv&key=aed6a8e29c1edbe73t3fba79abf409do&units=metric`;
       const forecastResponse = await axios.get(apiForecastUrl);
       const formatedArray = forecastResponse.data.daily.slice(1, 6);
-      props.setForecast(formatedArray);
+      setForecast(formatedArray);
     };
     fetchInitialData();
-  }, [props.setWeather, props.setForecast]);
+  }, [setWeather, setForecast]);
 
   return (
     <form className="Form" onSubmit={handleSubmit}>
